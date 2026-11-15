@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CableTV Archive 24/7</title>
+    <meta
+      name="description"
+      content="A nostalgic 24-hour U.S. cable TV archive guide with 100 cable channels, network IDs, and Archive.org references."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-mark">CTV</div>
+        <div>
+          <p class="eyebrow">U.S. Cable Archive</p>
+          <h1>CableTV Archive 24/7</h1>
+        </div>
+      </div>
+      <div class="status-strip">
+        <span class="status-dot"></span>
+        <span id="liveClock">Loading clock…</span>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">1980–2026</p>
+          <h2>Nostalgic 24-hour cable viewing guide</h2>
+          <p>
+            A curated digital archive of classic U.S. cable channels, full-day
+            24-hour programming blocks, network IDs, and archival references for
+            a retro broadcast viewing experience. No bundled sample videos or
+            placeholder test-pattern footage are included.
+          </p>
+          <div class="hero-meta">
+            <span>100 cable channels</span>
+            <span>24-hour blocks</span>
+            <span>Archive.org links</span>
+          </div>
+        </div>
+
+        <div class="viewer-panel">
+          <div class="viewer-label-row">
+            <span class="viewer-badge">Reference Player</span>
+            <span id="activeChannelId" class="mini-tag">A&E</span>
+          </div>
+
+          <video id="archiveVideo" controls playsinline preload="metadata" aria-label="Archival reference player"></video>
+
+          <div class="viewer-info">
+            <h3 id="selectedChannelName">A&amp;E</h3>
+            <p id="selectedChannelBlurb">
+              Documentary, true crime, and lifestyle programming archive references.
+            </p>
+            <div class="viewer-actions">
+              <a id="sourceLink" href="https://archive.org" target="_blank" rel="noreferrer">Open archival source</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="schedule-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Channel guide</p>
+            <h2>24-hour programming blocks</h2>
+          </div>
+          <div class="legend-box">
+            <span>Archive references</span>
+            <span class="legend-pill">No sample video bundles</span>
+          </div>
+        </div>
+
+        <div id="selectedChannelSchedule" class="schedule-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="channels-panel">
+        <div class="section-head narrow-head">
+          <div>
+            <p class="eyebrow">Cable lineup</p>
+            <h2>100 channels</h2>
+          </div>
+        </div>
+        <div id="channelGrid" class="channel-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
